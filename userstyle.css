@@ -1,0 +1,248 @@
+/* PARSED MARKDOWN */
+/* designed by uxamanda (https://discourse.joplinapp.org/u/uxamanda). latest version https://github.com/amandamcg/joplin-theme */
+:root {
+    --white: #F6F6F6;
+    --dark-white: #EEEEEE;
+    --light-grey: #A6A6A6;
+    --grey: #646464;
+    --dark-grey: #222222;
+    --darker-grey: #0E0E0E;
+    --black: #000000;
+    --primary: #EC0860;
+    --secondary: #CA1D74;
+	--green: #20CE88;
+    --base-size-1: 1px;
+    --base-size-4: 4px;
+    --base-size-13: 13px;
+	--base-size-16: 16px;
+    --base-size-18: 18px;
+    --big: 24px;
+    --base-size-32: 32px;
+    --base-size-40: 40px;
+    --font-sans: Inter;
+    --font-mono: "Ubuntu Mono";
+    --font-weight-light: 300;
+    --font-weight-base: 400;
+    --font-weight-bold: 700;
+    --font-line-height: 1.1em; 
+}
+
+/*****************************************************
+ * IMPROVEMENTS TODO LIST:
+ * - checkbox style
+ * - <hr /> as dotted/dashed white line
+ *****************************************************/
+
+/* CODE BLOCKS FRAME*/
+.hljs {
+    background-color: var(--dark-grey);
+    padding: var(--base-size-18);
+    border-radius: var(--base-size-13) !important;
+}
+
+/* RENDERED CONTENT PADDING */
+#rendered-md {
+    padding: 5%;
+}
+
+body, th, td {
+    font-family: var(--font-sans) !important;
+	font-size: var(--base-size-18) !important;
+    color: var(--white);
+    background-color: var(--darker-grey);
+}
+
+th {
+	font-weight: var(--font-weight-bold) !important;
+}
+
+
+/*********
+  HEADERS
+ *********/
+p, h1, h2, h3, h4, h5, h6, ul, table {
+    margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold) !important;
+    margin-top: var(--big);
+	text-transform: uppercase !important;
+}
+
+h1 {
+    font-size: var(--base-size-40) !important;
+    border-bottom: none !important;
+ /*   line-height: var(--font-line-height) !important;
+    margin-top: var(--base-size-40) !important; */
+}
+
+h1:first-child {
+    margin-top: 0px !important;
+}
+
+h2 {
+    font-size: var(--base-size-32);
+}
+
+h3 {
+	fonr-size: 24px;
+}
+
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    color: var(--white);
+    margin-bottom: var(--base-size-18);
+}
+
+
+/* LINE SEPARATOR */
+hr {
+    padding: var(--big) !important;
+	border: 1px solid var(--green);
+}
+/*
+.md-checkbox {
+    margin-left: 0 !important;
+}
+
+.md-checkbox .checkbox-wrapper {
+    align-items: flex-start;
+}
+*/
+.md-checkbox input[type="checkbox"i] {
+	background-color: var(--grey) !important;
+    /*opacity: 0.8 !important;*/ /* it must be fully opaque or custom bullet point will be shown */
+	border: none !important; */
+}
+
+.md-checkbox input[type=checkbox]:checked {
+	opacity: 1 !important;
+}
+
+a {
+    text-decoration: none !important;
+/*    padding: 0 0 var(--base-size-4) 0 !important; */
+    color: var(--primary) !important;
+}
+
+a:hover {
+    border-bottom: var(--base-size-1) dashed var(--primary) !important;
+}
+
+/* INTERNAL LINKS COLOUR */
+a[data-resource-id] {
+    color: var(--green) !important;
+    /* https://discourse.joplinapp.org/t/share-your-css/1730/65 */
+}
+
+a[data-resource-id]:hover {
+    border-bottom: var(--base-size-1) dashed var(--green) !important;
+}
+
+/* JOPLIN ICON IN JOPLIN INTERNAL LINK */
+.resource-icon {
+    background-color: var(--green) !important;
+	transform: scale(0.8);
+	top: .3em !important;
+}
+
+/*```
+CODE BLOCKS
+```*/
+.code, code, pre {
+    font-family: var(--font-mono) !important;
+}
+
+/* `INLINE CODE` */
+.inline-code {
+    padding: .3em .5em .2em .5em !important;
+    border-radius: 6px !important;
+    background-color: var(--dark-grey) !important;
+    border: none !important;
+ /*   color: #ABB2BF !important; */
+}
+
+/* ==emphasis== */
+/* COLORS FOR DIFFERENT MARK TAGS */
+/* ==mark== */
+mark {
+	background-color: var(--secondary);
+    padding: 0 var(--base-size-4) !important;
+}
+/* OCCURENCES OF SEARCH TERM */
+mark[data-markjs] {
+	background-color: var(--secondary);
+	padding:          0;
+}
+/* CURRENT SEARCH TERM (LOCAL SEARCH) */
+mark[data-markjs].mark-selected {
+	background-color: var(--secondary);
+}
+
+.footnotes-sep {
+    border: 0;
+    border-bottom: 2px dashed var(--green) !important
+}
+
+
+/************
+  PDF EXPORT 
+ ************/
+
+@media print {
+  body, p, ol, ul, li, em, strong, b {
+    color: #111 !important;
+  }
+  body {
+	font-family: 1em Inter, Helvetica, "Helvetica Neue", sans;
+	background: white;
+  }
+  .exported-note-title {
+    border: 0;
+	text-align: center
+  }
+  h1 {
+	color: black;
+    border: 0
+  }
+  h2, h3, h4, h5, h6 {
+    color: #005;
+	border: 0
+  }
+  a {
+    color: var(--primary);
+    text-decoration:none
+  }
+  a code, a:link code, a:visited code {
+    color: var(--primary);
+  }
+  .code, code, pre, .inline-code, .mce-content-body code {
+	font-family: var(--font-mono);
+	border-radius: 5px !important;
+    outline: none;
+    border: none !important;
+	background: #EEEEEE !important;
+	color:black
+  }
+  table, pre {
+    page-break-inside: avoid
+   }
+  pre {
+	word-wrap: break-word
+  }
+  .footnotes-sep {
+    border-bottom: 2px dashed var(--primary) !important
+  }
+  blockquote {
+  color: #111;
+  font: italic 1em "Playfair Display",Merriweather,Times,serif;
+  margin:1em 0;
+  border-left:4px dashed #EC0868;
+  padding-left:.6em
+  }
+}

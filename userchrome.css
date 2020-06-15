@@ -1,0 +1,349 @@
+
+/*                       
+ *                        JOPLIN APP STYLE
+ * (except the HTML-ized markdown, which is defined in `userstyle.css`)
+ * 
+ *
+ *
+ * designed by xplosionmind
+ * SOURCE https://github.com/xplosiomind/joplin-theme
+ */
+
+
+:root {
+    --white: #F6F6F6;
+    --dark-white: #EEEEEE;
+    --light-grey: #A6A6A6;
+    --grey: #494949;
+    --dark-grey: #222222;
+    --darker-grey: #0E0E0E;
+    --black: #000000;
+    --primary: #FF4B9A;
+    --secondary: #CA1D74;
+	--green: #20CE88;
+    --base-size-1: 1px;
+    --base-size-4: 4px;
+    --base-size-13: 13px;
+	--base-size-16: 16px;
+    --base-size-18: 18px;
+    --big: 24px;
+    --base-size-32: 32px;
+    --base-size-40: 40px;
+    --font-sans: Inter, sans-serif;
+    --font-mono: "Ubuntu Mono", mono;
+	--font-cond: "Barlow Condensed", sans-serif;
+    --font-weight-light: 300;
+    --font-weight-base: 400;
+    --font-weight-bold: 700;
+}
+
+
+/*****************************************************
+ * IMPROVEMENTS TODO LIST:
+ * - change color of selected notebook 
+ * - vertically center TAG text in its box
+ * - popup windows
+ *     - buttons
+ *     - background color
+ *     - font
+ *****************************************************/
+
+body {
+    font-family: var(--font-sans), -apple-system, "Helvetica" !important;
+	background-color: var(--black) !important;
+}
+
+/* REMOVE SEPARATION LINE BETWEEN NOTE CONTENT AND NOTEBOOK LIST */
+#react-root>div>div>div:last-child {
+    border-left: none !important;
+}
+
+#react-root>div>div>div {
+	background-color: var(--darker-grey) !important;
+	font-family: var(--font-sans) !important;
+	color: var(--light-grey) !important;
+}
+
+#react-root, #react-root>div, #react-root>div>div {
+	background-color: var(--darker-grey) !important;
+}
+
+/* TAG LIST */
+.tag-list {
+	border-bottom: none !important;
+}
+
+/* TAGS IN TAGS LIST (IF PRESENT) */
+.tag-list span {
+	border-radius: 5px;
+	background-color: var(--secondary) !important;
+	text-transform: uppercase;
+	font-weight: var(--font-weight-bold);
+	color: #000
+}
+
+/* EDITOR TOOLBAR */
+.editor-toolbar {
+	border: none !important;
+	margin-bottom: none !important;
+}
+
+/* INPUT FIELDS */
+input {
+    border-radius: var(--base-size-13) !important;
+	outline: none;
+    border: none !important;
+	background-color: var(--dark-grey) !important;
+	font-family: var(--font-sans) !important;
+}
+
+/* NOTE TITLE */
+#react-root div div div div div input {
+	font-weight: bold;
+	font-size: var(--big) !important;
+}
+
+/* INPUT FIELDS WHEN FOCUSED */
+input:focus {
+	background-color: var(--secondary) !important;
+}
+
+
+/*****************
+  MARKDOWN EDITOR 
+ *****************/
+.ace_content {
+    background-color: var(--darker-grey) !important;
+}
+
+.ace_editor div, .ace_editor span {
+    font-family: var(--font-mono) !important;
+    color: var(--dark-white);
+}
+
+/* HEADINGS */
+.ace_heading {
+    color: var(--white) !important;
+	font-weight: bold;
+}
+
+/* VARIABLES */
+.ace_variable {
+    color: var(--white) !important;
+}
+
+/* LIST AND CHECKBOX ELEMENTS */
+.ace_list {
+    color: #BEDAF6 !important;
+}
+
+/* TEXT IN [BRACKETS] */
+.ace_string {
+    color: var(--primary) !important;
+}
+
+/* BOLD TEXT */
+/*.ace_string.ace_strong {
+	color: var(--primary) !important;
+} */
+
+
+/* ITALIC TEXT */
+.ace_string.ace_emphasis {
+/*	color: var(--primary) !important; */
+	font-style: italic;
+}
+
+/* INLINE CODE AND CODEBLOCKS */
+.ace_support.ace_function {
+	color: #D8BEF6 !important;
+	border: none !important;
+}
+
+/* HTML TAGS */
+.ace_meta /*ace_tag ace_punctuation ace_tag-close ace_xml*/ {
+	color: #20CE88 !important; /* a beautiful green */
+}
+
+/* CURSOR */
+.ace_cursor-layer:not(.ace_hidden-cursors) .ace_cursor {
+    /* prevent cursor from blinking */
+	/* https://discourse.joplinapp.org/t/share-your-css/1730/17 */
+	opacity: .33 !important;
+	background-color: var(--primary);
+	border: var(--primary) !important;
+}
+
+/*****
+  GUI
+ *****/
+/* "ALL NOTES", "NOTEBOOKS", "TAGS" */
+.side-bar div span {
+	font-size: var(--base-size-18) !important;
+	color: var(--dark-white);
+	font-family: var(--font-cond);
+	text-transform: uppercase;
+	font-weight: var(--font-weight-bold);
+}
+
+.side-bar .folders .list-item-container, .side-bar div {
+	background-color: var(--darker-gray);
+}
+
+.side-bar div div div {
+	font-family: var(--font-cond);
+	font-size: 13px;
+}
+
+/* SYNC BUTTON */
+.synchronize-button {
+	border: none !important;
+	background-color: var(--dark-grey);
+	border-radius: 8px !important;
+	color: var(--light-grey) !important;
+	text-transform: uppercase;
+	font-family: var(--font-cond) !important;
+	font-weight: var(--font-weight-bold);
+}
+
+/************ 
+  NOTES LIST 
+ ************/
+/* FOLDERS LIST BACKGROUND */
+.item-list.note-list, .item-list {
+	background-color: var(--darker-grey) !important;
+}
+
+
+
+/* TO-DOs CHECKBOXES */
+.note-list input[type="checkbox"i] {
+    opacity: 0.5 !important;
+    margin-right: 1em !important;
+}
+
+/* REMOVE SEPARATORS BETWEEN NOTES IN NOTE LIST */
+.note-list div {
+    border-bottom: 0 !important;
+}
+
+.tags, .list-item, .list-item-container a span {
+	font-size: var(--base-size-16) !important;
+    font-family: var(--font-cond) !important;
+    color: var(--dark-white) !important;
+}
+
+.note-list a.list-item span {
+	/* NOT WORKING */
+}
+
+/* NOTES AND TO-DOs BACKGROUND*/
+.note-list a.list-item, .note-list div {
+	background-color: #0E0E0E !important;
+}
+
+/* NOTE HOVERED */
+.list-item-container a:hover {
+	background-color: var(--dark-grey) !important;
+}
+
+/* SELECTED NOTE AND NOTEBOOK */
+.list-item-container a:focus/*, .note-list div:focus ==> NOT WORKING */ /*MISSING: SELECTED NOTEBOOK*/{
+	background-color: var(--secondary) !important;
+	color: var(--white);
+}
+
+/*******
+  ICONS
+ *******/
+.fa {
+    color: var(--light-grey) !important;
+	transform: scale(1.1);
+}
+
+#react-root div div div:last-child div input {
+    font-size: var(--base-size-18);
+    font-family: var(--font-mono);
+}
+
+.button {
+	text-transform: uppercase;
+	border: none !important;
+}
+
+/*
+.editor-toolbar {
+    height: 50px;
+}
+
+.editor-toolbar .button {
+    height: var(--base-size-40)
+}
+
+.editor-toolbar .button i {
+    font-size: var(--base-size-13) !important;
+} */
+
+/********
+  HEADER
+ ********/
+.header, .header div, .header a.button {
+    border-bottom: none !important;
+	/* HIDE HEADER */
+/*	display: none !important; */
+}
+
+.header .title {
+    color: var(--grey);
+}
+
+/* TOGGLE SIDEBAR ICON */
+.header *:nth-child(1) {
+    order: 1;
+}
+
+/* TOGGLE NOTES LIST ICON */
+.header *:nth-child(2) {
+    order: 2;
+}
+
+/* NEW NOTE ICON */
+.header *:nth-child(3) {
+    order: 5;
+}
+
+/* NEW TODO ICON */
+.header *:nth-child(4) {
+    order: 6;
+}
+
+/* NEW NOTEBOOK ICON */
+.header *:nth-child(5) {
+    order: 4;
+    margin-left: var(--big);
+}
+
+/* LAYOUT ICON */
+.header *:nth-child(6) {
+    order: 3;
+}
+
+/* SEARCH */
+.header *:nth-child(7) {
+    order: 7;
+    margin-left: 117px;
+}
+
+/* SEARCH BAR */
+.header *:nth-child(7) input {
+    margin-left: auto !important;
+    width: var(--base-size-272);
+}
+
+.header *:nth-child(7) a {
+    display: none;
+}
+
+.header .title {
+    display: none !important;
+}
