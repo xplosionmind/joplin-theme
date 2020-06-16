@@ -1,42 +1,31 @@
-
-/*                       
- *                        JOPLIN APP STYLE
- * (except the HTML-ized markdown, which is defined in `userstyle.css`)
- * 
- *
- *
- * designed by xplosionmind
- * SOURCE https://github.com/xplosiomind/joplin-theme
- */
+/****************************************************************************
+ *																			*
+ * 							JOPLIN APP STYLE								*
+ *   (except the HTML-ized markdown, which is defined in "userstyle.css")	*
+ * 																			*
+ * 						designed by xplosionmind							*
+ *																			*
+ ****************************************************************************/
 
 
 :root {
-    --white: #F6F6F6;
-    --dark-white: #EEEEEE;
+    --text: white;
+    --white-ish: #EEEEEE;
     --light-grey: #A6A6A6;
-    --grey: #494949;
-    --dark-grey: #222222;
-    --darker-grey: #0E0E0E;
-    --black: #000000;
-    --primary: #FF4B9A;
+    --dark-grey: #222;
+    --black-ish: #111;
+    --primary: #EC0868;
     --secondary: #CA1D74;
 	--green: #20CE88;
-    --base-size-1: 1px;
-    --base-size-4: 4px;
-    --base-size-13: 13px;
-	--base-size-16: 16px;
-    --base-size-18: 18px;
+    --regular: 18px;
     --big: 24px;
-    --base-size-32: 32px;
-    --base-size-40: 40px;
-    --font-sans: Inter, sans-serif;
-    --font-mono: "Ubuntu Mono", mono;
-	--font-cond: "Barlow Condensed", sans-serif;
-    --font-weight-light: 300;
-    --font-weight-base: 400;
-    --font-weight-bold: 700;
-}
+    --font-sans: Inter;
+    --font-mono: "Ubuntu Mono";
+	--font-cond: "Barlow Condensed";
+    --bold: 700;
 
+	--background: black;
+}
 
 /*****************************************************
  * IMPROVEMENTS TODO LIST:
@@ -50,7 +39,7 @@
 
 body {
     font-family: var(--font-sans), -apple-system, "Helvetica" !important;
-	background-color: var(--black) !important;
+	background: var(--background) !important;
 }
 
 /* REMOVE SEPARATION LINE BETWEEN NOTE CONTENT AND NOTEBOOK LIST */
@@ -59,13 +48,13 @@ body {
 }
 
 #react-root>div>div>div {
-	background-color: var(--darker-grey) !important;
+	background: var(--black-ish) !important;
 	font-family: var(--font-sans) !important;
 	color: var(--light-grey) !important;
 }
 
 #react-root, #react-root>div, #react-root>div>div {
-	background-color: var(--darker-grey) !important;
+	background: var(--black-ish) !important;
 }
 
 /* TAG LIST */
@@ -76,9 +65,9 @@ body {
 /* TAGS IN TAGS LIST (IF PRESENT) */
 .tag-list span {
 	border-radius: 5px;
-	background-color: var(--secondary) !important;
+	background: var(--secondary) !important;
 	text-transform: uppercase;
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--bold);
 	color: #000
 }
 
@@ -90,10 +79,10 @@ body {
 
 /* INPUT FIELDS */
 input {
-    border-radius: var(--base-size-13) !important;
+    border-radius: 13px !important;
 	outline: none;
     border: none !important;
-	background-color: var(--dark-grey) !important;
+	background: var(--dark-grey) !important;
 	font-family: var(--font-sans) !important;
 }
 
@@ -105,7 +94,7 @@ input {
 
 /* INPUT FIELDS WHEN FOCUSED */
 input:focus {
-	background-color: var(--secondary) !important;
+	background: var(--secondary) !important;
 }
 
 
@@ -113,23 +102,23 @@ input:focus {
   MARKDOWN EDITOR 
  *****************/
 .ace_content {
-    background-color: var(--darker-grey) !important;
+    background: var(--black-ish) !important;
 }
 
 .ace_editor div, .ace_editor span {
     font-family: var(--font-mono) !important;
-    color: var(--dark-white);
+    color: var(--white-ish);
 }
 
 /* HEADINGS */
 .ace_heading {
-    color: var(--white) !important;
+    color: var(--text) !important;
 	font-weight: bold;
 }
 
 /* VARIABLES */
 .ace_variable {
-    color: var(--white) !important;
+    color: var(--text) !important;
 }
 
 /* LIST AND CHECKBOX ELEMENTS */
@@ -170,7 +159,7 @@ input:focus {
     /* prevent cursor from blinking */
 	/* https://discourse.joplinapp.org/t/share-your-css/1730/17 */
 	opacity: .33 !important;
-	background-color: var(--primary);
+	background: var(--primary);
 	border: var(--primary) !important;
 }
 
@@ -179,31 +168,28 @@ input:focus {
  *****/
 /* "ALL NOTES", "NOTEBOOKS", "TAGS" */
 .side-bar div span {
-	font-size: var(--base-size-18) !important;
-	color: var(--dark-white);
-	font-family: var(--font-cond);
+	font: 700 var(--regular) var(--font-cond) !important;
+	color: var(--white-ish);
 	text-transform: uppercase;
-	font-weight: var(--font-weight-bold);
 }
 
 .side-bar .folders .list-item-container, .side-bar div {
-	background-color: var(--darker-gray);
+	background: var(--darker-gray);
 }
 
 .side-bar div div div {
-	font-family: var(--font-cond);
-	font-size: 13px;
+	font: 13px var(--font-cond);
 }
 
 /* SYNC BUTTON */
 .synchronize-button {
 	border: none !important;
-	background-color: var(--dark-grey);
+	background: var(--dark-grey);
 	border-radius: 8px !important;
 	color: var(--light-grey) !important;
 	text-transform: uppercase;
 	font-family: var(--font-cond) !important;
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--bold);
 }
 
 /************ 
@@ -211,7 +197,7 @@ input:focus {
  ************/
 /* FOLDERS LIST BACKGROUND */
 .item-list.note-list, .item-list {
-	background-color: var(--darker-grey) !important;
+	background: var(--black-ish) !important;
 }
 
 
@@ -228,9 +214,8 @@ input:focus {
 }
 
 .tags, .list-item, .list-item-container a span {
-	font-size: var(--base-size-16) !important;
-    font-family: var(--font-cond) !important;
-    color: var(--dark-white) !important;
+	font: var(--regular) var(--font-cond) !important;
+    color: var(--white) !important;
 }
 
 .note-list a.list-item span {
@@ -239,18 +224,18 @@ input:focus {
 
 /* NOTES AND TO-DOs BACKGROUND*/
 .note-list a.list-item, .note-list div {
-	background-color: #0E0E0E !important;
+	background: #0E0E0E !important;
 }
 
 /* NOTE HOVERED */
 .list-item-container a:hover {
-	background-color: var(--dark-grey) !important;
+	background: var(--dark-grey) !important;
 }
 
 /* SELECTED NOTE AND NOTEBOOK */
 .list-item-container a:focus/*, .note-list div:focus ==> NOT WORKING */ /*MISSING: SELECTED NOTEBOOK*/{
-	background-color: var(--secondary) !important;
-	color: var(--white);
+	background: var(--secondary) !important;
+	color: var(--text);
 }
 
 /*******
@@ -262,8 +247,7 @@ input:focus {
 }
 
 #react-root div div div:last-child div input {
-    font-size: var(--base-size-18);
-    font-family: var(--font-mono);
+    font: var(--regular) var(--font-mono);
 }
 
 .button {
@@ -276,13 +260,7 @@ input:focus {
     height: 50px;
 }
 
-.editor-toolbar .button {
-    height: var(--base-size-40)
-}
-
-.editor-toolbar .button i {
-    font-size: var(--base-size-13) !important;
-} */
+*/
 
 /********
   HEADER
@@ -294,7 +272,7 @@ input:focus {
 }
 
 .header .title {
-    color: var(--grey);
+    color: var(--light-grey);
 }
 
 /* TOGGLE SIDEBAR ICON */
@@ -337,7 +315,7 @@ input:focus {
 /* SEARCH BAR */
 .header *:nth-child(7) input {
     margin-left: auto !important;
-    width: var(--base-size-272);
+    width: var(--regular);
 }
 
 .header *:nth-child(7) a {
