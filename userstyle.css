@@ -42,13 +42,17 @@
 
 /* RENDERED CONTENT PADDING */
 #rendered-md {
-    padding: 5%;
+    padding: 5%
 }
 
 body, th, td {
     font: var(--regular) var(--font-sans) !important;
     color: var(--text);
     background: var(--background);
+}
+
+body {
+	line-height: 1.5em !important
 }
 
 th {

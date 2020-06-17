@@ -33,7 +33,6 @@
  * - vertically center TAG text in its box
  * - popup windows
  *     - buttons
- *     - background color
  *     - font
  *****************************************************/
 
@@ -48,13 +47,13 @@ body {
 }
 
 #react-root>div>div>div {
-	background: var(--black-ish) !important;
+	background: var(--background) !important;
 	font-family: var(--font-sans) !important;
-	color: var(--light-grey) !important;
+	color: var(--light-grey) !important
 }
 
 #react-root, #react-root>div, #react-root>div>div {
-	background: var(--black-ish) !important;
+	background: var(--background) !important;
 }
 
 /* TAG LIST */
@@ -102,18 +101,18 @@ input:focus {
   MARKDOWN EDITOR 
  *****************/
 .ace_content {
-    background: var(--black-ish) !important;
+    background: var(--background) !important
 }
 
 .ace_editor div, .ace_editor span {
     font-family: var(--font-mono) !important;
-    color: var(--white-ish);
+    color: var(--white-ish)
 }
 
 /* HEADINGS */
 .ace_heading {
     color: var(--text) !important;
-	font-weight: bold;
+	font-weight: bold
 }
 
 /* VARIABLES */
@@ -173,8 +172,8 @@ input:focus {
 	text-transform: uppercase;
 }
 
-.side-bar .folders .list-item-container, .side-bar div {
-	background: var(--darker-gray);
+.side-bar .folders .list-item-container {
+	background: var(--background) !important
 }
 
 .side-bar div div div {
@@ -197,7 +196,7 @@ input:focus {
  ************/
 /* FOLDERS LIST BACKGROUND */
 .item-list.note-list, .item-list {
-	background: var(--black-ish) !important;
+	background: var(--background) !important;
 }
 
 
@@ -224,12 +223,12 @@ input:focus {
 
 /* NOTES AND TO-DOs BACKGROUND*/
 .note-list a.list-item, .note-list div {
-	background: #0E0E0E !important;
+	background: var(--background) !important;
 }
 
 /* NOTE HOVERED */
 .list-item-container a:hover {
-	background: var(--dark-grey) !important;
+	background: var(--background) !important;
 }
 
 /* SELECTED NOTE AND NOTEBOOK */
@@ -244,10 +243,6 @@ input:focus {
 .fa {
     color: var(--light-grey) !important;
 	transform: scale(1.1);
-}
-
-#react-root div div div:last-child div input {
-    font: var(--regular) var(--font-mono);
 }
 
 .button {
