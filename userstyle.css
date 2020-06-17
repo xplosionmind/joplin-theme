@@ -14,8 +14,8 @@
     --light-grey: #A6A6A6;
     --dark-grey: #222;
     --black-ish: #111;
-    --primary: #EC0868;
-    --secondary: #CA1D74;
+    --primary: #FCC920;
+    --secondary: #EC0868;
 	--green: #20CE88;
     --regular: 18px;
     --big: 24px;
@@ -110,7 +110,7 @@ h4 {
 /* LINE SEPARATOR */
 hr {
     padding: var(--big) !important;
-	border: 1px solid var(--green);
+	border: 1px solid var(--secondary);
 }
 /*
 .md-checkbox {
@@ -142,22 +142,22 @@ a:hover {
 
 hr, .footnotes-sep {
     border: 0;
-    border-bottom: 2px dashed var(--green) !important
+    border-bottom: 2px dashed var(--secondary) !important
 }
 
 /* INTERNAL LINKS COLOUR */
 a[data-resource-id] {
-    color: var(--green) !important;
+    color: var(--secondary) !important;
     /* https://discourse.joplinapp.org/t/share-your-css/1730/65 */
 }
 
 a[data-resource-id]:hover {
-    border-bottom: 2px dashed var(--green) !important;
+    border-bottom: 2px dashed var(--secondary) !important;
 }
 
 /* JOPLIN ICON IN JOPLIN INTERNAL LINK */
 .resource-icon {
-    background: var(--green) !important;
+    background: var(--secondary) !important;
 	transform: scale(0.8);
 	top: .3em !important;
 }

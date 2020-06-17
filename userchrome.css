@@ -14,8 +14,8 @@
     --light-grey: #A6A6A6;
     --dark-grey: #222;
     --black-ish: #111;
-    --primary: #EC0868;
-    --secondary: #CA1D74;
+    --primary: #FCC920;
+    --secondary: #EC0868;
 	--green: #20CE88;
     --regular: 18px;
     --big: 24px;
@@ -150,7 +150,7 @@ input:focus {
 
 /* HTML TAGS */
 .ace_meta /*ace_tag ace_punctuation ace_tag-close ace_xml*/ {
-	color: #20CE88 !important; /* a beautiful green */
+	color: var(--green) !important
 }
 
 /* CURSOR */
