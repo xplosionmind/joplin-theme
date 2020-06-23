@@ -11,9 +11,10 @@
 :root {
     --text: white;
     --white-ish: #EEEEEE;
-    --light-grey: #A6A6A6;
-    --dark-grey: #222;
-    --black-ish: #111;
+    --light-grey: #656565;
+    --grey: #292929;
+	--dark-grey: #333;
+    --black-ish: #1E1E1E;
     --primary: #FCC920;
     --secondary: #EC0868;
 	--green: #20CE88;
@@ -24,7 +25,7 @@
 	--font-cond: "Barlow Condensed";
     --bold: 700;
 
-	--background: black;
+	--background: var(--black-ish);
 }
 
 /*****************************************************
@@ -35,7 +36,7 @@
 
 /* CODE BLOCKS FRAME*/
 .hljs {
-    background: var(--dark-grey);
+    background: var(--grey);
     padding: var(--regular);
     border-radius: 10px !important;
 }
@@ -62,7 +63,7 @@ th {
 }
 
 th, td {
-	border: 1px solid var(--dark-grey) !important;
+	border: 1px solid var(--grey) !important;
 }
 
 
@@ -122,7 +123,7 @@ hr {
 }
 */
 .md-checkbox input[type="checkbox"i] {
-	background: var(--dark-grey) !important;
+	background: var(--grey) !important;
     /*opacity: 0.8 !important;*/ /* it must be fully opaque or custom bullet point will be shown */
 	border: none !important; */
 }
@@ -173,7 +174,7 @@ a[data-resource-id]:hover {
 .inline-code {
     padding: .3em .5em .2em .5em !important;
     border-radius: 6px !important;
-    background: var(--dark-grey) !important;
+    background: var(--grey) !important;
     border: none !important;
 }
 

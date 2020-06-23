@@ -11,9 +11,10 @@
 :root {
     --text: white;
     --white-ish: #EEEEEE;
-    --light-grey: #A6A6A6;
-    --dark-grey: #222;
-    --black-ish: #111;
+    --light-grey: #656565;
+    --grey: #292929;
+	--dark-grey: #333;
+    --black-ish: #1E1E1E;
     --primary: #FCC920;
     --secondary: #EC0868;
 	--green: #20CE88;
@@ -24,7 +25,7 @@
 	--font-cond: "Barlow Condensed";
     --bold: 700;
 
-	--background: black;
+	--background: var(--dark-grey);
 }
 
 /*****************************************************
@@ -81,7 +82,7 @@ input {
     border-radius: 13px !important;
 	outline: none;
     border: none !important;
-	background: var(--dark-grey) !important;
+	background: var(--grey) !important;
 	font-family: var(--font-sans) !important;
 }
 
@@ -100,7 +101,7 @@ input:focus {
 /*****************
   MARKDOWN EDITOR 
  *****************/
-.ace_content {
+.ace_content,.CodeMirror {
     background: var(--background) !important
 }
 
@@ -183,7 +184,7 @@ input:focus {
 /* SYNC BUTTON */
 .synchronize-button {
 	border: none !important;
-	background: var(--dark-grey);
+	background: var(--grey);
 	border-radius: 8px !important;
 	color: var(--light-grey) !important;
 	text-transform: uppercase;
