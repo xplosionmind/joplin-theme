@@ -25,7 +25,9 @@
 	--font-cond: "Barlow Condensed";
     --bold: 700;
 
-	--background: var(--black-ish);
+	--background: var(--grey);
+	--background2: var(--dark-grey);
+	--background3: var(--black-ish)
 }
 
 /*****************************************************
@@ -36,7 +38,7 @@
 
 /* CODE BLOCKS FRAME*/
 .hljs {
-    background: var(--grey);
+    background: var(--background2);
     padding: var(--regular);
     border-radius: 10px !important;
 }
@@ -49,7 +51,7 @@
 body, th, td {
     font: var(--regular) var(--font-sans) !important;
     color: var(--text);
-    background: var(--background);
+    background: var(--background3);
 }
 
 body {
@@ -59,7 +61,7 @@ body {
 th {
 	font-weight: var(--bold) !important;
 	background: var(--primary) !important;
-	color: var(--background) !important
+	color: var(--background3) !important
 }
 
 th, td {

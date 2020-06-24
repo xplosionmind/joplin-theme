@@ -10,7 +10,7 @@
 
 :root {
     --text: white;
-    --white-ish: #EEEEEE;
+    --white-ish: #EEE;
     --light-grey: #656565;
     --grey: #292929;
 	--dark-grey: #333;
@@ -25,7 +25,9 @@
 	--font-cond: "Barlow Condensed";
     --bold: 700;
 
-	--background: var(--dark-grey);
+	--background: var(--grey);
+	--background2: var(--dark-grey);
+	--background3: var(--black-ish)
 }
 
 /*****************************************************
@@ -38,23 +40,14 @@
  *****************************************************/
 
 body {
-    font-family: var(--font-sans), -apple-system, "Helvetica" !important;
-	background: var(--background) !important;
+    font-family: var(--font-sans), -apple-system, Helvetica !important;
+	background: var(--background3) !important;
 }
 
 /* REMOVE SEPARATION LINE BETWEEN NOTE CONTENT AND NOTEBOOK LIST */
-#react-root>div>div>div:last-child {
-    border-left: none !important;
-}
-
-#react-root>div>div>div {
-	background: var(--background) !important;
-	font-family: var(--font-sans) !important;
-	color: var(--light-grey) !important
-}
-
-#react-root, #react-root>div, #react-root>div>div {
-	background: var(--background) !important;
+#react-root *, #tinymce {
+    border: 0 !important;
+	background: none !important
 }
 
 /* TAG LIST */
@@ -65,25 +58,16 @@ body {
 /* TAGS IN TAGS LIST (IF PRESENT) */
 .tag-list span {
 	border-radius: 5px;
-	background: var(--secondary) !important;
 	text-transform: uppercase;
 	font-weight: var(--bold);
-	color: #000
-}
-
-/* EDITOR TOOLBAR */
-.editor-toolbar {
-	border: none !important;
-	margin-bottom: none !important;
 }
 
 /* INPUT FIELDS */
-input {
+#react-root input {
     border-radius: 13px !important;
 	outline: none;
-    border: none !important;
-	background: var(--grey) !important;
 	font-family: var(--font-sans) !important;
+	background: var(--background2) !important
 }
 
 /* NOTE TITLE */
@@ -93,7 +77,7 @@ input {
 }
 
 /* INPUT FIELDS WHEN FOCUSED */
-input:focus {
+#react-root input:focus {
 	background: var(--secondary) !important;
 }
 
@@ -101,10 +85,6 @@ input:focus {
 /*****************
   MARKDOWN EDITOR 
  *****************/
-.ace_content,.CodeMirror {
-    background: var(--background) !important
-}
-
 .ace_editor div, .ace_editor span {
     font-family: var(--font-mono) !important;
     color: var(--white-ish)
@@ -146,7 +126,6 @@ input:focus {
 /* INLINE CODE AND CODEBLOCKS */
 .ace_support.ace_function {
 	color: #D8BEF6 !important;
-	border: none !important;
 }
 
 /* HTML TAGS */
@@ -155,13 +134,13 @@ input:focus {
 }
 
 /* CURSOR */
-.ace_cursor-layer:not(.ace_hidden-cursors) .ace_cursor {
+/* #react-root .ace_cursor-layer:not(.ace_hidden-cursors) .ace_cursor {
     /* prevent cursor from blinking */
 	/* https://discourse.joplinapp.org/t/share-your-css/1730/17 */
-	opacity: .33 !important;
-	background: var(--primary);
+/*	opacity: .5 !important;
+	background: var(--primary) !important;
 	border: var(--primary) !important;
-}
+} */
 
 /*****
   GUI
@@ -169,12 +148,12 @@ input:focus {
 /* "ALL NOTES", "NOTEBOOKS", "TAGS" */
 .side-bar div span {
 	font: 700 var(--regular) var(--font-cond) !important;
-	color: var(--white-ish);
+	color: var(--white);
 	text-transform: uppercase;
 }
 
-.side-bar .folders .list-item-container {
-	background: var(--background) !important
+.side-bar * {
+	background: transparent !important
 }
 
 .side-bar div div div {
@@ -182,13 +161,12 @@ input:focus {
 }
 
 /* SYNC BUTTON */
-.synchronize-button {
+#react-root .synchronize-button {
 	border: none !important;
-	background: var(--grey);
-	border-radius: 8px !important;
-	color: var(--light-grey) !important;
+	background: var(--background2) !important;
+	border-radius: 7px !important;
+	color: var(--white-ish) !important;
 	text-transform: uppercase;
-	font-family: var(--font-cond) !important;
 	font-weight: var(--bold);
 }
 
@@ -196,21 +174,14 @@ input:focus {
   NOTES LIST 
  ************/
 /* FOLDERS LIST BACKGROUND */
-.item-list.note-list, .item-list {
-	background: var(--background) !important;
+#react-root .item-list .list-item-container:nth-child(even) {
+	background: var(--background2) !important
 }
-
-
 
 /* TO-DOs CHECKBOXES */
 .note-list input[type="checkbox"i] {
     opacity: 0.5 !important;
     margin-right: 1em !important;
-}
-
-/* REMOVE SEPARATORS BETWEEN NOTES IN NOTE LIST */
-.note-list div {
-    border-bottom: 0 !important;
 }
 
 .tags, .list-item, .list-item-container a span {
@@ -222,20 +193,13 @@ input:focus {
 	/* NOT WORKING */
 }
 
-/* NOTES AND TO-DOs BACKGROUND*/
-.note-list a.list-item, .note-list div {
-	background: var(--background) !important;
-}
-
-/* NOTE HOVERED */
-.list-item-container a:hover {
-	background: var(--background) !important;
-}
-
-/* SELECTED NOTE AND NOTEBOOK */
-.list-item-container a:focus/*, .note-list div:focus ==> NOT WORKING */ /*MISSING: SELECTED NOTEBOOK*/{
-	background: var(--secondary) !important;
-	color: var(--text);
+/* NOTE OR FOLDER HOVERED OR ACTIVE */
+#react-root .list-item-container a:hover, #react-root .list-item-container:hover,
+#react-root .list-item-container a:focus, #react-root .list-item-container:focus,
+#react-root .list-item-container a:active, #react-root .list-item-container:active {
+	background: var(--primary) !important;
+	color: var(--background3) !important;
+	outline: 0 !important
 }
 
 /*******
@@ -243,26 +207,23 @@ input:focus {
  *******/
 .fa {
     color: var(--light-grey) !important;
-	transform: scale(1.1);
+}
+
+.fas {
+	font-size: 16px !important
 }
 
 .button {
 	text-transform: uppercase;
-	border: none !important;
 }
-
-/*
-.editor-toolbar {
-    height: 50px;
-}
-
-*/
 
 /********
   HEADER
  ********/
-.header, .header div, .header a.button {
+.header, .header div, .header .button {
     border-bottom: none !important;
+	font-family: var(--font-sans) !important;
+	color: var(--light-grey) !important;
 	/* HIDE HEADER */
 /*	display: none !important; */
 }
