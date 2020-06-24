@@ -134,13 +134,13 @@ body {
 }
 
 /* CURSOR */
-/* #react-root .ace_cursor-layer:not(.ace_hidden-cursors) .ace_cursor {
+#react-root .ace_cursor-layer:not(.ace_hidden-cursors) .ace_cursor {
     /* prevent cursor from blinking */
 	/* https://discourse.joplinapp.org/t/share-your-css/1730/17 */
-/*	opacity: .5 !important;
+	opacity: .5 !important;
 	background: var(--primary) !important;
 	border: var(--primary) !important;
-} */
+}
 
 /*****
   GUI
