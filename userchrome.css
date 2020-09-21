@@ -189,8 +189,8 @@ body {
     color: var(--white) !important;
 }
 
-.note-list a.list-item span {
-	/* NOT WORKING */
+.list-item-container * {
+	text-transform: uppercase
 }
 
 /* NOTE OR FOLDER HOVERED OR ACTIVE */
