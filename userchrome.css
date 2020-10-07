@@ -1,284 +1,137 @@
-/****************************************************************************
- *																			*
- * 							JOPLIN APP STYLE								*
- *   (except the HTML-ized markdown, which is defined in "userstyle.css")	*
- * 																			*
- * 						designed by xplosionmind							*
- *																			*
- ****************************************************************************/
-
+/****************************************************
+ *                                                	*
+ *	  Joplin dark theme, designed by xplosionmind 	*
+ *               https://tommi.space				*
+ *                                                  *
+ ****************************************************/
 
 :root {
-    --text: white;
-    --white-ish: #EEE;
-    --light-grey: #656565;
-    --grey: #292929;
-	--dark-grey: #333;
-    --black-ish: #1E1E1E;
-    --primary: #FCC920;
-    --secondary: #EC0868;
+	--black-ish: #111;
+	--white-ish: #E0E0E0;
+	--dark-grey: #222;
+	--light-grey: #BBB;
+	--yellow: #FCC920;
+	--blue: #3185FC;
+	--red: #D00;
 	--green: #20CE88;
-    --regular: 18px;
-    --big: 24px;
-    --font-sans: Inter;
-    --font-mono: "Ubuntu Mono";
-	--font-cond: "Barlow Condensed";
-    --bold: 700;
+	--razzmatazz: #EC0868;
 
-	--background: var(--grey);
-	--background2: var(--dark-grey);
-	--background3: var(--black-ish)
+	--tiny: 0.2rem;
+	--tinyem: 0.2em;
+	--small: 0.5rem;
+	--smallem: 0.5em;
+	--lessthan-regular: 0.9rem;
+	--regular: 1.1rem;
+	--regular-em: 1.1em;
+	--morethan-regular: 1.3rem;
+	--morethan-regular-em: 1.3em;
+	--big: 1.6rem;
+	--big-em: 1.6em;
+	--bigger: 1.8rem;
+	--bigger-em: 1.8em;
+	--twice: 2.2rem;
+	--height: 3.1rem;
+	--mastodon: 4.4rem;
+	--margin: 6.5rem;
+	--trans: .5s;
+	--quicktrans: .1s;
+
+	--primary: var(--yellow)
 }
 
-/*****************************************************
- * IMPROVEMENTS TODO LIST:
- * - change color of selected notebook 
- * - vertically center TAG text in its box
- * - popup windows
- *     - buttons
- *     - font
- *****************************************************/
 
-body {
-    font-family: var(--font-sans), -apple-system, Helvetica !important;
-	background: var(--background3) !important;
+* {
+	border: 0 !important; /* remove all borders, they're ugly */
+	font-family: Helvetica
 }
 
-/* REMOVE SEPARATION LINE BETWEEN NOTE CONTENT AND NOTEBOOK LIST */
-#react-root *, #tinymce {
-    border: 0 !important;
-	background: none !important
+/* change selection color (it appears darker than it should) */
+::selection {
+	color: #222 !important;
+	background: var(--primary) !important;
 }
 
-/* TAG LIST */
-.tag-list {
+/* remove notes separator in list */
+.note-list *::before {
 	border-bottom: none !important;
 }
 
-/* TAGS IN TAGS LIST (IF PRESENT) */
-.tag-list span {
-	border-radius: 5px;
+.note-list, .sc-fzqNJr {
+	background: #222 !important;
+}
+
+/* differenciate notes' background in list for a better readability */
+.note-list .list-item-container:nth-child(even) {
+	background: var(--black-ish) !important;
+}
+
+.note-list .list-item-container:nth-child(even):hover {
+	background: var(--primary) !important;
+}
+
+.note-list .list-item-container:nth-child(even):hover * {
+	color: #222 !important;
+}
+
+.side-bar>div, .fZxMYz {
+	background: #222 !important
+}
+
+/* add a MacOS-like thin border to separate the sidebar and the note list*/
+.side-bar {
+	border-right: solid 1px black !important
+}
+
+.editor-toolbar {
+	background: none !important
+}
+
+/* highlight in yellow hovered and selected notes and notebooks */
+.list-item-container:active,
+.list-item-container:focus,
+.list-item-container:hover {
+	background: var(--primary) !important;
+}
+
+.list-item-container:hover *,
+.list-item-container:active *,
+.list-item-container:focus * {
+	color: #222 !important;
+}
+
+/* new notebook and new note buttons */
+.eopHcM {
+	background: var(--primary) !important;
+	border-radius: 5px !important
+}
+
+/* search icon */
+.icon-search {
+	color: var(--primary) !important
+}
+
+/* tags in tags editor */
+.css-8hn3v4-multiValue, .css-8hn3v4-multiValue *{
+	background: var(--primary) !important;
+	color: #222 !important;
 	text-transform: uppercase;
-	font-weight: var(--bold);
-}
-
-/* INPUT FIELDS */
-#react-root input {
-    border-radius: 13px !important;
-	outline: none;
-	font-family: var(--font-sans) !important;
-	background: var(--background2) !important
-}
-
-/* NOTE TITLE */
-#react-root div div div div div input {
 	font-weight: bold;
-	font-size: var(--big) !important;
+	border-radius: 5px !important
 }
 
-/* INPUT FIELDS WHEN FOCUSED */
-#react-root input:focus {
-	background: var(--secondary) !important;
-}
-
-
-/*****************
-  MARKDOWN EDITOR 
- *****************/
-.ace_editor div, .ace_editor span {
-    font-family: var(--font-mono) !important;
-    color: var(--white-ish)
-}
-
-/* HEADINGS */
-.ace_heading {
-    color: var(--text) !important;
-	font-weight: bold
-}
-
-/* VARIABLES */
-.ace_variable {
-    color: var(--text) !important;
-}
-
-/* LIST AND CHECKBOX ELEMENTS */
-.ace_list {
-    color: #BEDAF6 !important;
-}
-
-/* TEXT IN [BRACKETS] */
-.ace_string {
-    color: var(--primary) !important;
-}
-
-/* BOLD TEXT */
-/*.ace_string.ace_strong {
-	color: var(--primary) !important;
-} */
-
-
-/* ITALIC TEXT */
-.ace_string.ace_emphasis {
-/*	color: var(--primary) !important; */
-	font-style: italic;
-}
-
-/* INLINE CODE AND CODEBLOCKS */
-.ace_support.ace_function {
-	color: #D8BEF6 !important;
-}
-
-/* HTML TAGS */
-.ace_meta /*ace_tag ace_punctuation ace_tag-close ace_xml*/ {
-	color: var(--green) !important
-}
-
-/* CURSOR */
-#react-root .ace_cursor {
-    /* prevent cursor from blinking */
-	/* https://discourse.joplinapp.org/t/share-your-css/1730/17 */
-	opacity: .5 !important;
-	background: var(--primary) !important;
-	border: var(--primary) !important;
-}/*.ace_cursor-layer:not(.ace_hidden-cursors)*/ 
-
-/*****
-  GUI
- *****/
-/* "ALL NOTES", "NOTEBOOKS", "TAGS" */
-.side-bar div span {
-	font: 700 var(--regular) var(--font-cond) !important;
-	color: var(--white);
+/* tags at the bottom of the page */
+.tag-list span {
 	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 5px !important
 }
 
-.side-bar * {
-	background: transparent !important
+/* "x" when typing in search bar*/
+.fCCgEl {
+	color: var(--primary) !important
 }
 
-.side-bar div div div {
-	font: 13px var(--font-cond);
-}
-
-/* SYNC BUTTON */
-#react-root .synchronize-button {
-	border: none !important;
-	background: var(--background2) !important;
-	border-radius: 7px !important;
-	color: var(--white-ish) !important;
-	text-transform: uppercase;
-	font-weight: var(--bold);
-}
-
-/************ 
-  NOTES LIST 
- ************/
-/* FOLDERS LIST BACKGROUND */
-#react-root .item-list .list-item-container:nth-child(even) {
-	background: var(--background2) !important
-}
-
-/* TO-DOs CHECKBOXES */
-.note-list input[type="checkbox"i] {
-    opacity: 0.5 !important;
-    margin-right: 1em !important;
-}
-
-.tags, .list-item, .list-item-container a span {
-	font: var(--regular) var(--font-cond) !important;
-    color: var(--white) !important;
-}
-
-.list-item-container * {
-	text-transform: uppercase
-}
-
-/* NOTE OR FOLDER HOVERED OR ACTIVE */
-#react-root .list-item-container a:hover, #react-root .list-item-container:hover,
-#react-root .list-item-container a:focus, #react-root .list-item-container:focus,
-#react-root .list-item-container a:active, #react-root .list-item-container:active {
-	background: var(--primary) !important;
-	color: var(--background3) !important;
-	outline: 0 !important
-}
-
-/*******
-  ICONS
- *******/
-.fa {
-    color: var(--light-grey) !important;
-}
-
-.fas {
-	font-size: 16px !important
-}
-
-.button {
-	text-transform: uppercase;
-}
-
-/********
-  HEADER
- ********/
-.header, .header div, .header .button {
-    border-bottom: none !important;
-	font-family: var(--font-sans) !important;
-	color: var(--light-grey) !important;
-	/* HIDE HEADER */
-/*	display: none !important; */
-}
-
-.header .title {
-    color: var(--light-grey);
-}
-
-/* TOGGLE SIDEBAR ICON */
-.header *:nth-child(1) {
-    order: 1;
-}
-
-/* TOGGLE NOTES LIST ICON */
-.header *:nth-child(2) {
-    order: 2;
-}
-
-/* NEW NOTE ICON */
-.header *:nth-child(3) {
-    order: 5;
-}
-
-/* NEW TODO ICON */
-.header *:nth-child(4) {
-    order: 6;
-}
-
-/* NEW NOTEBOOK ICON */
-.header *:nth-child(5) {
-    order: 4;
-    margin-left: var(--big);
-}
-
-/* LAYOUT ICON */
-.header *:nth-child(6) {
-    order: 3;
-}
-
-/* SEARCH */
-.header *:nth-child(7) {
-    order: 7;
-    margin-left: 117px;
-}
-
-/* SEARCH BAR */
-.header *:nth-child(7) input {
-    margin-left: auto !important;
-    width: var(--regular);
-}
-
-.header *:nth-child(7) a {
-    display: none;
-}
-
-.header .title {
-    display: none !important;
+/* Fixes a display bug where the last few letters of a full-width line can't be seen */
+.CodeMirror-lines {
+	width: 96% !important
 }

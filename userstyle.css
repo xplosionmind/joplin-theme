@@ -1,33 +1,47 @@
-/****************************************************************************
- *																			*
- * 						JOPLIN RENDERED TEXT STYLE							*
- *   			(to style the whole app, edit "userstyle.css")				*
- * 																			*
- * 						designed by xplosionmind							*
- *																			*
- ****************************************************************************/
-
+/****************************************************
+ *                                                	*
+ *	  Joplin dark theme, designed by xplosionmind 	*
+ *               https://tommi.space				*
+ *                                                  *
+ ****************************************************/
 
 :root {
-    --text: white;
-    --white-ish: #EEEEEE;
-    --light-grey: #656565;
-    --grey: #292929;
-	--dark-grey: #333;
-    --black-ish: #1E1E1E;
-    --primary: #FCC920;
-    --secondary: #EC0868;
+	--black-ish: #111;
+	--white-ish: #EEE;
+	--grey: #333;
+	--light-grey: #BBB;
+	--yellow: #FCC920;
+	--blue: #3185FC;
+	--red: #D00;
 	--green: #20CE88;
-    --regular: 18px;
-    --big: 24px;
-    --font-sans: Inter;
-    --font-mono: "Ubuntu Mono";
-	--font-cond: "Barlow Condensed";
-    --bold: 700;
+	--razzmatazz: #EC0868;
 
-	--background: var(--grey);
-	--background2: var(--dark-grey);
-	--background3: var(--black-ish)
+	--tiny: 0.2rem;
+	--tinyem: 0.2em;
+	--small: 0.5rem;
+	--smallem: 0.5em;
+	--lessthan-regular: 0.9rem;
+	--regular: 1.1rem;
+	--regular-em: 1.1em;
+	--morethan-regular: 1.3rem;
+	--morethan-regular-em: 1.3em;
+	--big: 1.6rem;
+	--big-em: 1.6em;
+	--bigger: 1.8rem;
+	--bigger-em: 1.8em;
+	--twice: 2.2rem;
+	--height: 3.1rem;
+	--mastodon: 4.4rem;
+	--margin: 6.5rem;
+	--trans: .5s;
+	--quicktrans: .1s;
+}
+
+body {
+	--primary: var(--yellow);
+	--secondary: var(--razzmatazz);
+	--background2: #333;
+	--text: var(--white-ish)
 }
 
 /*****************************************************
@@ -49,9 +63,8 @@
 }
 
 body, th, td {
-    font: var(--regular) var(--font-sans) !important;
+    font: var(--regular) Inter !important;
     color: var(--text);
-    background: var(--background3);
 }
 
 body {
@@ -61,13 +74,18 @@ body {
 th {
 	font-weight: var(--bold) !important;
 	background: var(--primary) !important;
-	color: var(--background3) !important
+	color: var(--background2) !important
 }
 
 th, td {
 	border: 1px solid var(--grey) !important;
 }
 
+/* change selection color (it appears darker than it should) */
+::selection {
+	color: #222 !important;
+	background: var(--primary) !important;
+}
 
 /*********
   HEADERS
@@ -82,14 +100,14 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: var(--bold) !important;
+    font-weight: bolder !important;
     margin-top: var(--big);
 	text-transform: uppercase !important;
+    border-bottom: none !important
 }
 
-h1 {
+/*h1 {
     font-size: 300% !important;
-    border-bottom: none !important;
 }
 
 h1:first-child {
@@ -107,7 +125,7 @@ h3 {
 
 h4 {
     font-size: 140%;
-}
+} */
 
 
 /* LINE SEPARATOR */
@@ -169,7 +187,8 @@ a[data-resource-id]:hover {
     CODE BLOCKS
     ```           */
 .code, code, pre {
-    font-family: var(--font-mono) !important;
+    font-family: "Ubuntu Mono" !important;
+	font-size: var(--morethan-regular)
 }
 
 /* `INLINE CODE` */
@@ -182,13 +201,18 @@ a[data-resource-id]:hover {
 
 /* OCCURENCES OF SEARCH TERM */
 mark[data-markjs] {
-	background: var(--secondary);
+	background: var(--primary);
+	color: #222
 }
 /* CURRENT SEARCH TERM (LOCAL SEARCH) */
 mark[data-markjs].mark-selected {
-	background: var(--secondary);
+	background: var(--primary);
+	color: #222
 }
-
+mark {
+	background: var(--primary) !important;
+	color: #222 !important
+}
 
 /************
   PDF EXPORT 
@@ -205,13 +229,9 @@ mark[data-markjs].mark-selected {
     border: 0;
 	text-align: center
   }
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
 	color: black;
     border: 0
-  }
-  h2, h3, h4, h5, h6 {
-    color: #005;
-	border: 0
   }
   a {
     color: var(--primary);
@@ -234,13 +254,13 @@ mark[data-markjs].mark-selected {
 	word-wrap: break-word
   }
   .footnotes-sep {
-    border-bottom: 2px dashed var(--primary) !important
+    border-bottom: 2px dashed var(--razzmatazz) !important
   }
   blockquote {
   color: #111;
   font: italic 1em "Playfair Display",Merriweather,Times,serif;
   margin: 1em 0;
-  border-left: 4px dashed #EC0868;
+  border-left: 4px dashed var(--razzmatazz);
   padding-left: .6em
   }
 }
