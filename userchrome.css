@@ -39,10 +39,9 @@
 	--primary: var(--yellow)
 }
 
-
 * {
 	border: 0 !important; /* remove all borders, they're ugly */
-	font-family: Helvetica
+	font: 1.1em Helvetica
 }
 
 /* change selection color (it appears darker than it should) */
@@ -134,4 +133,20 @@
 /* Fixes a display bug where the last few letters of a full-width line can't be seen */
 .CodeMirror-lines {
 	width: 96% !important
+}
+
+/* style links in pop-up windows */
+.note-property-box a {
+	color: var(--primary) !important
+}
+
+/* use mono font when editing stuff in popup windows */
+input.form-control {
+	font: 1.1em "Ubuntu Mono", "Fira Code", mono !important
+}
+
+/* increase note title font size */
+.rli-editor input {
+	font-size: 1.1em !important;
+	margin-left: var(--morethan-regular) !important
 }
