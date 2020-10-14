@@ -41,7 +41,8 @@
 
 * {
 	border: 0 !important; /* remove all borders, they're ugly */
-	font: 1.1em Helvetica
+/*	font: 1.1em Helvetica */ /* it doesn't work nicely */
+	font-family: Helvetica
 }
 
 /* change selection color (it appears darker than it should) */
@@ -143,10 +144,4 @@
 /* use mono font when editing stuff in popup windows */
 input.form-control {
 	font: 1.1em "Ubuntu Mono", "Fira Code", mono !important
-}
-
-/* increase note title font size */
-.rli-editor input {
-	font-size: 1.1em !important;
-	margin-left: var(--morethan-regular) !important
 }
