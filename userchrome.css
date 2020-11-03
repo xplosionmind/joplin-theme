@@ -145,3 +145,17 @@
 input.form-control {
 	font: 1.1em "Ubuntu Mono", "Fira Code", mono !important
 }
+
+/* yellow background in active notebooks */
+.kNDCeq {
+	background: var(--yellow) !important;
+}
+
+/* dark text color in active notebooks */
+.kNDCeq a {
+	color: var(--dark-grey);
+}
+
+.kNDCeq a div {
+	color: #444;
+}
