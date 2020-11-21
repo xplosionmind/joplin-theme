@@ -1,3 +1,7 @@
+# Archived
+
+This repository has been archived since I'm not using Joplin anymore, classes may change and styling may break.
+
 # Joplin theme
 
 Custom dark theme for [Joplin](https://joplinapp.org).
